@@ -1,4 +1,6 @@
 $icon-font-path: '../fonts/';
+$font-family_1: 'Orbitron', courier, serif;
+
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -46,19 +48,22 @@ body {
 }
 
 #header-img {
-  background-image: url("https://pbs.twimg.com/profile_images/448030989864796163/peSGpeef_400x400.png");
+//  background-image: url("https://pbs.twimg.com/profile_images/448030989864796163/peSGpeef_400x400.png");
+  background-image: url("https://pbs.twimg.com/profile_images/2349866958/m9pjwl1x1n3nvzf8x8rc_400x400.png");
   background-size: cover;
   width: 50px;
   height: 50px;
 }
 .header {
-  height: 55px;
-  background-color: #eee;
+  height: 50px;
+  background-color: #6441a4;
 }
 
 #header-text {
-  font-size: 38px;
-  font-family: TimesRoman, serif;
+  text-align: left;
+  font-family: $font-family_1;
+  text-shadow: 2px 2px 2px white;
+  font-size: 35px;
 }
 
 .image-channel {

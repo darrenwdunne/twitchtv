@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>wikisearch</title>
+    <title>Twitch Featured</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
     <!-- Place favicon.ico in the root directory -->
 
     <!-- build:css styles/vendor.css -->
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="/bower_components/font-awesome-animation/dist/font-awesome-animation.min.css"/>
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
@@ -28,23 +27,16 @@
     <div class="container">
       <div class="header">
         <!-- <h3 class="text-muted">wikisearch</h3> -->
-        <span id="header-text">Twitch Online</span>
-        <div class="pull-right" id="header-img">
-        </div>
+        <span id="header-text">Twitch</span>
+        <div class="pull-right" id="header-img"></div>
       </div>
 
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
-
-            <label class="control-label" for="inputSearch">Search Wikipedia</label>
-            <div class="input-group">
-              <input type="text" class="form-control" id="inputSearch" placeholder="Enter search text"/>
-              <span class="input-group-addon">
-                <i class="fa fa-search"></i>
-              </span>
+            <div class="checkbox">
+              <label><input type="checkbox" id="checkbox-mature" value="mature" checked>Include mature channels</label>
             </div>
-            <span id="helpBlock" class="help-block">Tip: hit Enter to automatically open the first item</span>
           </div>
         </div>
 
@@ -52,7 +44,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div id="searchResultsDiv">
-            <h4>Search Results</h4>
+            <h4>Twitch Featured</h4>
             <div id="searchResultsTableHolder"></div>
           </div>
         </div>
