@@ -18,9 +18,9 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
+.footer,
 .header,
-.marketing,
-.footer {
+.marketing {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -46,7 +46,7 @@ body {
 }
 
 #header-img {
-  background-image: url(https://pbs.twimg.com/profile_images/448030989864796163/peSGpeef_400x400.png);
+  background-image: url("https://pbs.twimg.com/profile_images/448030989864796163/peSGpeef_400x400.png");
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -66,6 +66,9 @@ body {
   height: 45px;
 }
 
+.table tbody > tr > td.vert-align {
+  vertical-align: middle;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -74,9 +77,9 @@ body {
   }
 
   /* Remove the padding we set earlier */
+  .footer,
   .header,
-  .marketing,
-  .footer {
+  .marketing {
     padding-left: 0;
     padding-right: 0;
   }

@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#inputSearch').focus();
   showSearchResults(false);
   queryTwitch('');
-//  setInterval(queryTwitch, 1000);
+  //  setInterval(queryTwitch, 1000);
 });
 
 $(document).keypress(function(e) {
@@ -24,8 +24,8 @@ $('#inputSearch').on('input', function(data) {
 });
 
 function queryTwitch() {
-//  $.getJSON('https://api.twitch.tv/kraken/streams/freecodecamp?callback=?', function(data) {
-//$.getJSON('https://api.twitch.tv/kraken/streams/featured?callback=?', function(data) {
+  //  $.getJSON('https://api.twitch.tv/kraken/streams/freecodecamp?callback=?', function(data) {
+  //$.getJSON('https://api.twitch.tv/kraken/streams/featured?callback=?', function(data) {
   // Note: "featured" doesn't appear to require the callback?
   $.getJSON('https://api.twitch.tv/kraken/streams/featured', function(data) {
     $('#searchResultsTableHolder').empty();
@@ -44,7 +44,7 @@ function showSearchError(err) {
     $('.form-group').addClass('has-error');
     $('#helpBlock').text('Not found in Wikipedia');
     $('#searchResultsDiv').hide();
-//    $('#inputSearch').addClass('')
+    //    $('#inputSearch').addClass('')
   } else {
     $('.form-group').removeClass('has-error');
   }
@@ -56,7 +56,7 @@ function makeTable(container, data) {
   table.append('<thead class="thead-inverse"><tr><th>Page Title</th><th>Channel</th><th>Preview</th></tr></thead><tbody>');
 
   $.each(data.featured, function(k, v) {
-    var row = generateTableRow(v.title, v.stream.channel.url, v.image, v.stream.preview.small);
+    var row = generateTableRow(v.title, v.stream.channel.url, v.image, v.stream.preview.small, v.stream.channel.mature);
     table.append(row);
   });
   table.append('</tbody>');
@@ -64,14 +64,16 @@ function makeTable(container, data) {
   return container.append(table);
 }
 
-function generateTableRow(title, channelURL, image, preview) {
+function generateTableRow(title, channelURL, image, preview, mature) {
   var aTitle = '<a href="' + channelURL + '" target="blank">' + title + '</a>';
   var aImage = '<img class="image-channel" src="' + image + '"></img>';
   var aPreview = '<img src="' + preview + '"></img>';
-
-
   var row = $('<tr/>');
-  row.append('<td>' + aImage + '</td><td>' + aTitle + '</td><td>' + aPreview + '</td>');
+  row.append('<td>' + aImage + '</td><td class="vert-align">' + aTitle + '</td><td>' + aPreview + '</td>');
+  if (mature) {
+    row.addClass("danger");
+  }
+
   return row;
 }
 
